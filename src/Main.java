@@ -9,14 +9,15 @@ import Models.DTOs.ProfesorDTO;
 import Models.DTOs.RelAlumAsigDTO;
 import Models.DTOs.RelProfAsigDTO;
 
-public class Main { // esta clase sería el CONTROLADOR !!
+public class Main { // esta clase Main.java sería el equivalente al CONTROLADOR en ASP.NET (HomeController.cs) !!
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-        
+		
+		// Lo primero de todo será declarar un objeto de la clase Connection de java.sql. e inicializarlo como nulo (ya que esta clase no tiene un constructor vacío y no se puede dejar sólo declarado)
+		Connection conexionGenerada = null; // este objeto será el que iremos pasando como parámetro a los métodos de consultas
+		
 		/****************** Obtener y mostrar la tabla alumnos de la BBDD *******************/
 		
-        Connection conexionGenerada = null;
         List<AlumnoDTO> listaAlumnos = new ArrayList<AlumnoDTO>();
 
         listaAlumnos = ConsultasPostgreSQL.ConsultaSelectAlumnos(conexionGenerada);
@@ -30,7 +31,6 @@ public class Main { // esta clase sería el CONTROLADOR !!
         
         /****************** Obtener y mostrar la tabla asignaturas de la BBDD *******************/
 		
-        conexionGenerada = null;
         List<AsignaturaDTO> listaAsignaturas = new ArrayList<AsignaturaDTO>();
 
         listaAsignaturas = ConsultasPostgreSQL.ConsultaSelectAsignaturas(conexionGenerada);
@@ -44,7 +44,6 @@ public class Main { // esta clase sería el CONTROLADOR !!
         
         /****************** Obtener y mostrar la tabla profesores de la BBDD *******************/
         
-        conexionGenerada = null;
         List<ProfesorDTO> listaProfesores = new ArrayList<ProfesorDTO>();
 
         listaProfesores = ConsultasPostgreSQL.ConsultaSelectProfesores(conexionGenerada);
@@ -58,7 +57,6 @@ public class Main { // esta clase sería el CONTROLADOR !!
         
         /****************** Obtener y mostrar la tabla RelAlumAsig de la BBDD *******************/
         
-        conexionGenerada = null;
         List<RelAlumAsigDTO> listaRelAlumAsig = new ArrayList<RelAlumAsigDTO>();
 
         listaRelAlumAsig = ConsultasPostgreSQL.ConsultaSelectRelAlumAsig(conexionGenerada);
@@ -72,7 +70,6 @@ public class Main { // esta clase sería el CONTROLADOR !!
         
         /****************** Obtener y mostrar la tabla RelAlumAsig de la BBDD *******************/
         
-        conexionGenerada = null;
         List<RelProfAsigDTO> listaRelProfAsig = new ArrayList<RelProfAsigDTO>();
 
         listaRelProfAsig = ConsultasPostgreSQL.ConsultaSelectRelProfAsig(conexionGenerada);
@@ -86,12 +83,10 @@ public class Main { // esta clase sería el CONTROLADOR !!
         
         /************************* Hacemos un insert de un alumno *********************/
         
-        conexionGenerada = null;
         ConsultasPostgreSQL.ConsultaInsertAlumnos(conexionGenerada);
         
         /****************** Volvemos a obtener y mostrar la tabla alumnos de la BBDD *******************/
 		
-        conexionGenerada = null;
         listaAlumnos = new ArrayList<AlumnoDTO>();
 
         listaAlumnos = ConsultasPostgreSQL.ConsultaSelectAlumnos(conexionGenerada);
