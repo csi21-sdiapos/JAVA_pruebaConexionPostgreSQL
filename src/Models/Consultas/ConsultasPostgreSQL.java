@@ -41,7 +41,7 @@ public class ConsultasPostgreSQL {
 				
 			    resultadoConsulta.close();
 			    declaracionSQL.close();
-			    //conexionGenerada.close();
+			    conexionGenerada.close();
 				
 			} catch (SQLException e) {
 				System.out.println("\n[ERROR-conexionPostgresql-main] Error generando la declaracionSQL: " + e);
@@ -72,7 +72,7 @@ public class ConsultasPostgreSQL {
 				
 			    resultadoConsulta.close();
 			    declaracionSQL.close();
-			    //conexionGenerada.close();
+			    conexionGenerada.close();
 				
 			} catch (SQLException e) {
 				System.out.println("\n[ERROR-conexionPostgresql-main] Error generando la declaracionSQL: " + e);
@@ -103,7 +103,7 @@ public class ConsultasPostgreSQL {
 				
 			    resultadoConsulta.close();
 			    declaracionSQL.close();
-			    //conexionGenerada.close();
+			    conexionGenerada.close();
 				
 			} catch (SQLException e) {
 				System.out.println("\n[ERROR-conexionPostgresql-main] Error generando la declaracionSQL: " + e);
@@ -134,7 +134,7 @@ public class ConsultasPostgreSQL {
 				
 			    resultadoConsulta.close();
 			    declaracionSQL.close();
-			    //conexionGenerada.close();
+			    conexionGenerada.close();
 				
 			} catch (SQLException e) {
 				System.out.println("\n[ERROR-conexionPostgresql-main] Error generando la declaracionSQL: " + e);
@@ -165,7 +165,7 @@ public class ConsultasPostgreSQL {
 				
 			    resultadoConsulta.close();
 			    declaracionSQL.close();
-			    //conexionGenerada.close();
+			    conexionGenerada.close();
 				
 			} catch (SQLException e) {
 				System.out.println("\n[ERROR-conexionPostgresql-main] Error generando la declaracionSQL: " + e);
@@ -189,13 +189,13 @@ public class ConsultasPostgreSQL {
 			
 			try {
 				declaracionSQL = conexionGenerada.createStatement();
-				resultadoConsulta = declaracionSQL.executeQuery("INSERT INTO \"EjemploInicial\".\"alumnos\" (alumno_id, alumno_nombre, alumno_apellidos, alumno_email) VALUES (8, 'ivan', 'iglesias', 'ivan@gmail.com')");
+				resultadoConsulta = declaracionSQL.executeQuery("INSERT INTO \"EjemploInicial\".\"alumnos\" (alumno_id, alumno_nombre, alumno_apellidos, alumno_email) VALUES (DEFAULT, 'ivan', 'iglesias', 'ivan@gmail.com')");
 
 				System.out.println("\n[INFORMACIÓN-conexionPostgresql-main] Cierre conexión, declaración y resultado");
 				
 			    resultadoConsulta.close();
 			    declaracionSQL.close();
-			    //conexionGenerada.close();
+			    conexionGenerada.close();
 				
 			} catch (SQLException e) {
 				System.out.println("\n[ERROR-conexionPostgresql-main] Error generando la declaracionSQL: " + e);

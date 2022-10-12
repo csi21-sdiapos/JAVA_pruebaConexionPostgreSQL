@@ -102,6 +102,7 @@ public class Main { // esta clase sería el CONTROLADOR !!
         for(AlumnoDTO alumno : listaAlumnos) {
         	System.out.println(alumno.toString());
         }
+        
 	}
 
 }

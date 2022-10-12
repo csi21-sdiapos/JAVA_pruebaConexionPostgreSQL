@@ -11,7 +11,7 @@ public class VariablesConexionPostgreSQL {
 	static final String PASS = "12345";
 	static final String PORT = "5432";
 	static final String HOST = "localhost";
-	static final String DB = "EjemploInicial";	
+	static final String DB = "postgres";	
 	
 	public static String getUser() {
 		return USER;
